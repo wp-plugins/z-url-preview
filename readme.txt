@@ -17,7 +17,15 @@ This is a modified version of Abhishek Saha's URL Preview (https://wordpress.org
 
 Added the cacert.pem which CURL uses for https sites from http://curl.haxx.se/ca/cacert.pem (the home of CURL).
 
-ToDo: Screenshots to be added, additional options for link label and target. Longer term, configurable options for sites without an image and selecting from multiple OG images.
+ToDo: Additional options for link label and target. Longer term, configurable options for sites without an image and selecting from multiple OG images.
+
+== Screenshots ==
+
+1. Select the "add preview link" button.
+2. Enter the URL in the pop-up.
+3. Preview and edit, where needed, the contents.
+4. Default presentation client-side.
+5. Settings screen.
 
 == Changelog ==
 
