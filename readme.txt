@@ -19,6 +19,10 @@ Added the cacert.pem which CURL uses for https sites from http://curl.haxx.se/ca
 
 ToDo: Additional options for link label and target. Longer term, configurable options for sites without an image and selecting from multiple OG images.
 
+Thank you to Abhishek Saha for publishing the original URL Preview at https://wordpress.org/plugins/link-preview/ and for the WP review team for their help in conforming to coding rules.
+
+I do plan on developing this further providing I can find the tuits.
+
 == Screenshots ==
 
 1. Select the "add preview link" button.
