@@ -47,3 +47,6 @@ I do plan on developing this further providing I can find the tuits.
 
 = 1.4 =
 * First published version
+
+= 1.4.1 =
+* Corrected css path
