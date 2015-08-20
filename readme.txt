@@ -1,7 +1,7 @@
 === Z-URL Preview ===
 Tags: link preview, post, excerpt, Facebook type preview, linkedin type preview
 Requires at least: 4.2
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,20 +33,20 @@ I do plan on developing this further providing I can find the tuits.
 
 == Changelog ==
 
-= 1.0 =
-* First version / Fork
-
-= 1.1 =
-* Fixes / Corrections
-
-= 1.2 =
-* Fixes / Corrections
-
-= 1.3 =
-* Fixes / Corrections to WP guidelines
+= 1.4.1 =
+* Corrected css path
 
 = 1.4 =
 * First published version
 
-= 1.4.1 =
-* Corrected css path
+= 1.3 =
+* Fixes / Corrections to WP guidelines
+
+= 1.2 =
+* Fixes / Corrections
+
+= 1.1 =
+* Fixes / Corrections
+
+= 1.0 =
+* First version / Fork
