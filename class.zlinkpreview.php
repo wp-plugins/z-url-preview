@@ -108,6 +108,8 @@ class ZLinkPreview {
 }
 
 $zlinkPreview = new ZLinkPreview($_GET['url']);
+define('SHORTINIT', true);
+require_once('../../../wp-load.php');
 ?>
 <html>
     <head>
@@ -118,7 +120,7 @@ $zlinkPreview = new ZLinkPreview($_GET['url']);
         	<h2><?php $zlinkPreview->getTitle();  ?></h2>
 			<p class="imgp"><img data-src = "<?php $zlinkPreview->getImage(1); ?>" src="<?php $zlinkPreview->getImage();  ?>"></p>
 			<p class="imgd"><?php $zlinkPreview->getDescription();  ?></p>
-			<p class="imgs">Source: <a href="<?php echo $zlinkPreview->url; ?>" target='_blank'><?php echo preg_replace('#^https?://#', '', $zlinkPreview->url);  ?></a></p>
+			<p class="imgs"><?php echo get_option('zurlpreview_linktxt'); ?> <a href="<?php echo $zlinkPreview->url; ?>" target='_blank'><?php echo preg_replace('#^https?://#', '', $zlinkPreview->url);  ?></a></p>
         </div>
     </body>
 </html>

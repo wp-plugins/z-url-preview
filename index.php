@@ -3,7 +3,7 @@
   Plugin Name: Z-URL Preview
   Plugin URI: http://www.z-add.co.uk/
   Description: A plugin to embed a preview of a link, similar to facebook
-  Version: 1.4.1
+  Version: 1.4.2
   Author: Stuart Millington
   Author URI: http://www.z-add.co.uk
   License: GPL
@@ -55,11 +55,13 @@ register_deactivation_hook(__FILE__, 'zurlpreview_remove');
 function zurlpreview_install() {
     /* Creates new database field */
     add_option("zurlpreview_css", get_zurlpreview_css(), '', 'yes');
+    add_option("zurlpreview_linktxt", get_zurlpreview_linktxt(), '', 'yes');
 }
 
 function zurlpreview_remove() {
     /* Deletes the database field */
     delete_option('zurlpreview_css');
+    delete_option('zurlpreview_linktxt');
 }
 
 function get_zurlpreview_css() {
@@ -67,6 +69,10 @@ function get_zurlpreview_css() {
 				width: 100%;
 				max-width:100%;
  			}';
+}
+
+function get_zurlpreview_linktxt() {
+    return 'Source:';
 }
 
 if (is_admin()) {
@@ -102,17 +108,24 @@ function z_url_preview_option_page() {
 
             <table width="510">
                 <tr valign="top">
-                    <td width="92" scope="row">Z-URL Preview CSS</td>
+                    <td width="92" scope="row" colspan="2">Z-URL Preview</td>
                 </tr>
                 <tr valign="top">
+                	<td>CSS</td>
                     <td width="406">
                         <textarea name="zurlpreview_css" id="zurlpreview_css" rows="10" cols="70"><?php echo get_option('zurlpreview_css'); ?></textarea>
+                    </td>
+                </tr>
+                <tr valign="top">
+                	<td>Link Label</td>
+                    <td width="406">
+                        <input type="text" name="zurlpreview_linktxt" id="zurlpreview_linktxt" value="<?php echo get_option('zurlpreview_linktxt'); ?>"/>
                     </td>
                 </tr>
             </table>
 
             <input type="hidden" name="action" value="update" />
-            <input type="hidden" name="page_options" value="zurlpreview_css" />
+            <input type="hidden" name="page_options" value="zurlpreview_css,zurlpreview_linktxt" />
 
             <p>
                 <input type="submit" value="<?php _e('Save Changes') ?>" />
