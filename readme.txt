@@ -17,7 +17,7 @@ This is a modified version of Abhishek Saha's URL Preview (https://wordpress.org
 
 Added the cacert.pem which CURL uses for https sites from http://curl.haxx.se/ca/cacert.pem (the home of CURL).
 
-ToDo: Additional options for link label and target. Longer term, configurable options for sites without an image and selecting from multiple OG images.
+ToDo: Additional option for target. Longer term, configurable options for sites without an image and selecting from multiple OG images.
 
 Thank you to Abhishek Saha for publishing the original URL Preview at https://wordpress.org/plugins/link-preview/ and for the WP review team for their help in conforming to coding rules.
 
