@@ -33,6 +33,9 @@ I do plan on developing this further providing I can find the tuits.
 
 == Changelog ==
 
+= 1.4.2 =
+* Added source / link label option into settings
+
 = 1.4.1 =
 * Corrected css path
 
