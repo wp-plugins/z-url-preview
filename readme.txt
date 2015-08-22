@@ -12,8 +12,11 @@ A plugin to embed a preview of a link, similar to facebook
 This plugin fetches an excerpt of an external website link. The excerpt contains the title, description and image.
 
 The options page allows the following to be set:
+
 - CSS to change the look and feel of the generated links.
+
 - The article source label. (Default "Source:")
+
 - Control of new window opening. Options are 'target="_blank"', 'target="newwindow"', 'rel="external"' and opening in the same window. (Default 'target="_blank"')
 
 The defaults are designed to suit most people.
