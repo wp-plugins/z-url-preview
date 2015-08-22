@@ -11,17 +11,18 @@ A plugin to embed a preview of a link, similar to facebook
 == Description ==
 This plugin fetches an excerpt of an external website link. The excerpt contains the title, description and image.
 
-It also has an option page, which can be used to add CSS to change the look and feel.
+The options page allows the following to be set:
+- CSS to change the look and feel of the generated links.
+- The article source label. (Default "Source:")
+- Control of new window opening. Options are 'target="_blank"', 'target="newwindow"', 'rel="external"' and opening in the same window. (Default 'target="_blank"')
 
-This is a modified version of Abhishek Saha's URL Preview (https://wordpress.org/plugins/link-preview/)
+The defaults are designed to suit most people.
 
 Added the cacert.pem which CURL uses for https sites from http://curl.haxx.se/ca/cacert.pem (the home of CURL).
 
-ToDo: Additional option for target. Longer term, configurable options for sites without an image and selecting from multiple OG images.
+ToDo: Longer term, configurable options for sites without an image and selecting from multiple OG images.
 
-Thank you to Abhishek Saha for publishing the original URL Preview at https://wordpress.org/plugins/link-preview/ and for the WP review team for their help in conforming to coding rules.
-
-I do plan on developing this further providing I can find the tuits.
+Thank you to Abhishek Saha for publishing the original URL Preview at https://wordpress.org/plugins/link-preview/ which this is based on and for the WP review team for their help in conforming to coding rules.
 
 == Screenshots ==
 
@@ -32,6 +33,9 @@ I do plan on developing this further providing I can find the tuits.
 5. Settings screen.
 
 == Changelog ==
+
+= 1.4.3 =
+* Added option to control how/if the link opens a new window
 
 = 1.4.2 =
 * Added source / link label option into settings

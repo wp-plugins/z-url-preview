@@ -110,6 +110,20 @@ class ZLinkPreview {
 $zlinkPreview = new ZLinkPreview($_GET['url']);
 define('SHORTINIT', true);
 require_once('../../../wp-load.php');
+$linkmode = get_option('zurlpreview_linkmode');
+switch ($linkmode) {
+    case "target-blank":
+        $linkmodehtml = ' target="_blank"';
+        break;
+    case "target-newwindow":
+        $linkmodehtml = ' target="newwindow"';
+        break;
+    case "rel-external":
+        $linkmodehtml = ' rel="external"';
+        break;
+    default:
+        $linkmodehtml = '';
+}
 ?>
 <html>
     <head>
@@ -120,7 +134,7 @@ require_once('../../../wp-load.php');
         	<h2><?php $zlinkPreview->getTitle();  ?></h2>
 			<p class="imgp"><img data-src = "<?php $zlinkPreview->getImage(1); ?>" src="<?php $zlinkPreview->getImage();  ?>"></p>
 			<p class="imgd"><?php $zlinkPreview->getDescription();  ?></p>
-			<p class="imgs"><?php echo get_option('zurlpreview_linktxt'); ?> <a href="<?php echo $zlinkPreview->url; ?>" target='_blank'><?php echo preg_replace('#^https?://#', '', $zlinkPreview->url);  ?></a></p>
+			<p class="imgs"><?php echo get_option('zurlpreview_linktxt'); ?> <a href="<?php echo $zlinkPreview->url; ?>" <?php echo $linkmodehtml; ?>><?php echo preg_replace('#^https?://#', '', $zlinkPreview->url);  ?></a></p>
         </div>
     </body>
 </html>

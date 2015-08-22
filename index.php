@@ -3,7 +3,7 @@
   Plugin Name: Z-URL Preview
   Plugin URI: http://www.z-add.co.uk/
   Description: A plugin to embed a preview of a link, similar to facebook
-  Version: 1.4.2
+  Version: 1.4.3
   Author: Stuart Millington
   Author URI: http://www.z-add.co.uk
   License: GPL
@@ -56,12 +56,14 @@ function zurlpreview_install() {
     /* Creates new database field */
     add_option("zurlpreview_css", get_zurlpreview_css(), '', 'yes');
     add_option("zurlpreview_linktxt", get_zurlpreview_linktxt(), '', 'yes');
+    add_option("zurlpreview_linkmode", get_zurlpreview_linkmode(), '', 'yes');
 }
 
 function zurlpreview_remove() {
     /* Deletes the database field */
     delete_option('zurlpreview_css');
     delete_option('zurlpreview_linktxt');
+    delete_option('zurlpreview_linkmode');
 }
 
 function get_zurlpreview_css() {
@@ -73,6 +75,9 @@ function get_zurlpreview_css() {
 
 function get_zurlpreview_linktxt() {
     return 'Source:';
+}
+function get_zurlpreview_linkmode() {
+    return 'target-blank';
 }
 
 if (is_admin()) {
@@ -108,24 +113,35 @@ function z_url_preview_option_page() {
 
             <table width="510">
                 <tr valign="top">
-                    <td width="92" scope="row" colspan="2">Z-URL Preview</td>
+                    <td scope="row" colspan="2">Z-URL Preview</td>
                 </tr>
                 <tr valign="top">
-                	<td>CSS</td>
-                    <td width="406">
-                        <textarea name="zurlpreview_css" id="zurlpreview_css" rows="10" cols="70"><?php echo get_option('zurlpreview_css'); ?></textarea>
+                	<td width="130">CSS</td>
+                    <td width="380">
+                        <textarea name="zurlpreview_css" id="zurlpreview_css" rows="10" cols="60"><?php echo get_option('zurlpreview_css'); ?></textarea>
                     </td>
                 </tr>
                 <tr valign="top">
-                	<td>Link Label</td>
-                    <td width="406">
+                	<td width="130">Link Label</td>
+                    <td width="380">
                         <input type="text" name="zurlpreview_linktxt" id="zurlpreview_linktxt" value="<?php echo get_option('zurlpreview_linktxt'); ?>"/>
+                    </td>
+                </tr>
+				<tr valign="top">
+                	<td width="130">Link Mode</td>
+                    <td width="380">
+                        <select name="zurlpreview_linkmode" id="zurlpreview_linkmode">
+                        	<option value="same-window" <?php selected( get_option('zurlpreview_linkmode'), 'same-window'); ?>>Open in same window</option>
+                        	<option value="target-blank" <?php selected( get_option('zurlpreview_linkmode'), 'target-blank'); ?>>New window (target=_blank)</option>
+                        	<option value="target-newwindow" <?php selected( get_option('zurlpreview_linkmode'), 'target-newwindow'); ?>>New window (target=newwindow)</option>
+                        	<option value="rel-external" <?php selected( get_option('zurlpreview_linkmode'), 'rel-external'); ?>>New window (rel=external)</option>
+                        </select>
                     </td>
                 </tr>
             </table>
 
             <input type="hidden" name="action" value="update" />
-            <input type="hidden" name="page_options" value="zurlpreview_css,zurlpreview_linktxt" />
+            <input type="hidden" name="page_options" value="zurlpreview_css,zurlpreview_linktxt,zurlpreview_linkmode" />
 
             <p>
                 <input type="submit" value="<?php _e('Save Changes') ?>" />
