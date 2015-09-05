@@ -37,6 +37,9 @@ Thank you to Abhishek Saha for publishing the original URL Preview at https://wo
 
 == Changelog ==
 
+= 1.4.4 =
+* Adjusted title detection (due to issue with BBC News site)
+
 = 1.4.3 =
 * Added option to control how/if the link opens a new window
 

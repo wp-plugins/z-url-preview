@@ -55,7 +55,8 @@ class ZLinkPreview {
 
     function getTitle() {
 
-        if (preg_match("/<title>(.+)<\/title>/si", $this->html, $matches)) {
+        // if (preg_match("/<title>(.+)<\/title>/si", $this->html, $matches)) { // Changed due to issue with BBC news
+        if (preg_match("/<title>(.+)<\/title>/i", $this->html, $matches)) {
 
             echo $matches[1];
         } else {
