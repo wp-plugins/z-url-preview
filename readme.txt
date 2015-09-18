@@ -29,11 +29,12 @@ Thank you to Abhishek Saha for publishing the original URL Preview at https://wo
 
 == Screenshots ==
 
-1. Select the "add preview link" button.
+1. Select the "add preview link" button (Tiny MCE Advanced).
 2. Enter the URL in the pop-up.
 3. Preview and edit, where needed, the contents.
 4. Default presentation client-side.
 5. Settings screen.
+6. Button on Black Studio TinyMCE Widget 2.2.8.
 
 == Changelog ==
 
