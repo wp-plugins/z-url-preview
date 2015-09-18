@@ -27,6 +27,8 @@ ToDo: Longer term, configurable options for sites without an image and selecting
 
 Thank you to Abhishek Saha for publishing the original URL Preview at https://wordpress.org/plugins/link-preview/ which this is based on and for the WP review team for their help in conforming to coding rules.
 
+Note: Tested with "TinyMCE Advanced" and "Black Studio TinyMCE Widget" modules.
+
 == Screenshots ==
 
 1. Select the "add preview link" button (Tiny MCE Advanced).
